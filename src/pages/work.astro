@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+
+const projects = (await getCollection('work')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+	title="Experience | Ciana"
+	description="Learn about Jeanine White's most recent projects"
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="My EXperience"
+	
+				tagline="Time to look into my past experience."
+				align="start"
+			/>
+			
+			<p>
+				Well, i have attended two hackathons</p>
+<p>The first hackathon of mine wasn't great but then i need to admit that i have learnt a lot from it.</p>
+<p>The second one was was pretty good, we developed an IUI Analyser as a project</p>
+<p>Hope to attend and learn more from mistakes and failures!
+
+			</p>
+			<p> well then,</p>
+			<p>THANK YOU FOR GOING THROUGH MY PORTFOLIO !!!!!</p>
+			
+		</main>
+		
+	</div>
+</BaseLayout>
